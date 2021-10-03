@@ -1,5 +1,5 @@
 ---
-title: "Coffee quality review"
+title: "Coffee quality reviews"
 author: "Nasibah Azhari"
 date: "10/3/2021"
 output: html_document
@@ -8,6 +8,13 @@ output: html_document
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
+
+The dataset used was scraped from the Coffee Quality Institute website and cleaned
+by Reddit user JLD in the Dataset community subreddit. It compiles the reviews
+of different coffee products made by professional coffee graders based on 10
+attributes.
+
+For more information about the attributes, visit [this page](https://database.coffeeinstitute.org/coffee/976032/grade)
 
 ## Loading the libraries
 
