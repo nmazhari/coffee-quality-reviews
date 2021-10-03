@@ -1,0 +1,5 @@
+"0","posn_j <- position_jitter(0.6)"
+"0","ggplot(avg_attr_t, aes(x = Attribute, y = Rating, color = Country.of.Origin)) +"
+"0","  geom_point(position = posn_j) +"
+"0","  scale_y_continuous(limits = c(0,10)) +"
+"0","  scale_color_brewer(""Country of Origin"", type = ""qual"", palette = ""Paired"")"

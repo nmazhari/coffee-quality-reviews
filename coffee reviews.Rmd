@@ -1,0 +1,100 @@
+---
+title: "Coffee quality review"
+author: "Nasibah Azhari"
+date: "10/3/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Loading the libraries
+
+```{r, echo=TRUE, eval=TRUE}
+library(tidyverse)
+library(ggplot2)
+library(munsell)
+library(RColorBrewer)
+library(Hmisc)
+```
+
+## Importing the dataset
+
+```{r}
+arabica_coffee <- read_csv("data/arabica_data_cleaned.csv")
+```
+
+## Exploring the dataset
+
+```{r}
+glimpse(arabica_coffee)
+summary(arabica_coffee)
+```
+
+## The number of reviewed producers (countries)
+
+```{r}
+length(unique(arabica_coffee$Country.of.Origin))
+```
+
+## Which countries' products were most frequently reviewed?
+
+```{r}
+names(sort(table(arabica_coffee$Country.of.Origin), decreasing = TRUE)[1:10]) -> top_ten_countries
+```
+
+I'll focus on the ten most frequently reviewed ones, so the top ten producers were saved in an object to use it to filter by.
+
+## Creating a dataframe with reviews of products from the top ten producers only
+
+```{r}
+arabica_coffee %>%
+  filter(Country.of.Origin %in% top_ten_countries) -> arabica_coffee_top
+```
+
+Using the 'group_by' function, I calculated the mean of each of the 10 attributes:
+* Aroma
+* Flavour
+* Aftertaste
+* Acidity
+* Body
+* Balance
+* Uniformity
+* Clean Cup
+* Sweetness
+* Cupper points
+
+```{r}
+arabica_coffee_top %>%
+  group_by(Country.of.Origin) %>%
+  summarise(aroma = mean(Aroma),
+            flavour = mean(Flavor),
+            aftertaste = mean(Aftertaste),
+            acidity = mean(Acidity),
+            body = mean(Body),
+            balance = mean(Balance),
+            unformity = mean(Uniformity),
+            clean_cup = mean(Clean.Cup),
+            sweetness = mean(Sweetness),
+            cupper_points = mean(Cupper.Points)) -> avg_attr
+```
+
+## Tidying the dataset..
+
+```{r}
+avg_attr %>%
+  pivot_longer(-Country.of.Origin,
+               names_to = "Attribute",
+               values_to = "Rating") -> avg_attr_t
+```
+
+## Visualising the dataset
+
+```{r}
+posn_j <- position_jitter(0.6)
+ggplot(avg_attr_t, aes(x = Attribute, y = Rating, color = Country.of.Origin)) +
+  geom_point(position = posn_j) +
+  scale_y_continuous(limits = c(0,10)) +
+  scale_color_brewer("Country of Origin", type = "qual", palette = "Paired")
+```

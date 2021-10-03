@@ -1,0 +1,1 @@
+"0","names(sort(table(arabica_coffee$Country.of.Origin), decreasing = TRUE)[1:10]) -> top_ten_countries"

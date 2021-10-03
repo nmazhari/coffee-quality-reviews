@@ -1,0 +1,4 @@
+"0","avg_attr %>%"
+"0","  pivot_longer(-Country.of.Origin,"
+"0","               names_to = ""Attribute"","
+"0","               values_to = ""Rating"") -> avg_attr_t"
