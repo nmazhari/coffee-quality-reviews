@@ -2,18 +2,19 @@ Date created
 02.10.2021
 
 Project Title
-
+Arabica coffee review
 
 Description
-This is a python project which uses the Bikeshare data. It compares the system usage between three large cities: Chicago, New York City, and Washington, DC. with an interactive python script.
+This is an R project which explores the coffee ratings dataset and the top 10 most frequently reviewed coffee producers (countries).
 
-Dataset used
+Files used
 arabica_data_cleaned.csv
 
 Credits
-The dataset used was scraped from the Coffee Quality Institute and cleaned by Reddit user JLD. It was posted on the subreddit "Datasets" The project was inspired by Yorgos Askalidis's "Where can you find the best coffee?".
+This project was inspired by Yorgos Askalidis’s “Where can you find the best coffee?”.
+The dataset used was scraped from the Coffee Quality Institute website and cleaned by Reddit user JLD in the Dataset community subreddit.
 Links:
-The coffee Quality Institute: https://www.coffeeinstitute.org/
-"Where can you find the best coffee?": https://towardsdatascience.com/the-data-speak-ethiopia-has-the-best-coffee-91f88ed37e84
-The JLD's repo with the dataset: https://github.com/jldbc/coffee-quality-database
-The dataset subreddit: https://www.reddit.com/r/datasets/comments/8rndor/data_on_1340_coffee_bean_reviews_aroma_acidity/
+Coffee Quality Institute: https://www.coffeeinstitute.org
+“Where can you find the best coffee?”: https://towardsdatascience.com/the-data-speak-ethiopia-has-the-best-coffee-91f88ed37e84
+Dataset community subreddit: https://www.reddit.com/r/datasets/comments/8rndor/data_on_1340_coffee_bean_reviews_aroma_acidity/?utm_source=share&utm_medium=ios_app&utm_name=iossmf
+Dataset repo: https://github.com/jldbc/coffee-quality-database
