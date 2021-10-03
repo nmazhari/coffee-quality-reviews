@@ -5,7 +5,9 @@ Project Title
 Arabica coffee review
 
 Description
-This is an R project which explores the coffee ratings dataset and the top 10 most frequently reviewed coffee producers (countries).
+This is an R project that explores the coffee ratings dataset and the top 10 most frequently reviewed coffee producers (countries).
+Each coffee product was rated based on 10 attributed, described here:
+https://database.coffeeinstitute.org/coffee/976032/grade
 
 Files used
 arabica_data_cleaned.csv
